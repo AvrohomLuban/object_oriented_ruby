@@ -2,10 +2,10 @@ class Employee
   attr_reader :first_name, :last_name, :salary
   attr_accessor :active
   def initialize(input_hash)
-    @first_name = input_hash[:first_name]
-    @last_name = input_hash[:last_name]
-    @salary = input_hash[:salary]
-    @active = input_hash[:active]
+    @first_name = input_hash[:first_name] ||= "empty"
+    @last_name = input_hash[:last_name] ||= "empty"
+    @salary = input_hash[:salary] ||= "empty"
+    @active = input_hash[:active] ||= "empty"
   end
   def print_info
     puts "#{@first_name} #{@last_name} makes $#{@salary} a year."
@@ -25,5 +25,8 @@ end
 
 emplyee1 = Employee.new(first_name: "majora", last_name: "carter", salary: 10000, active: true)
 emplyee2 = Employee.new(first_name: "danilo", last_name: "campos", salary: 10000, active: true)
+emplyee3 = Employee.new()
+
 p emplyee1.full_name
 p emplyee2.full_name
+p emplyee3.full_name
