@@ -1,97 +1,19 @@
-# chocolate = {brand: "hersheys", model: "white", price: 4.99}
-# candy = {brand: "jolly ranchers", model: "Awesome tawesome", price: 3.99}
-# chips = {brand: "lays", model: "bbq", price: 1.99}
-
-# puts "we are selling #{chocolate[:brand]} #{chocolate[:model]} for only #{chocolate[:price]}"
-# puts "we are selling #{candy[:brand]} #{candy[:model]} for only #{candy[:price]}"
-# puts "we are selling #{chips[:brand]} #{chips[:model]} for only #{chips[:price]}"
-
-# chocolate = {:brand => "hersheys", :model => "white", :price => 4.99}
-# candy = {:brand => "hersheys", :model => "white", :price => 3.99}
-# chips = {:brand => "hersheys", :model => "white", :price => 1.99}
-
-# class Store
-
-#   def initialize (brand, model, price)
-#     @brand = brand
-#     @model = model
-#     @price = price
-#   end
-
-#   def brand
-#     return @brand
-#   end
-
-#   def model
-#     return @model
-#   end
-
-#   def price
-#     return @price
-#   end
-
-#   def price= (x)
-#     @price = x
-#   end
-
-# end
-
-# chocolate = Store.new("hersheys", "white", 4.99)
-# candy = Store.new("jollly ranchers", "Awesome twosome", 3.99)
-# chips = Store.new("lays", "bbq", 1.99)
-
-# p chocolate.brand
-# p chocolate.model
-# p chocolate.price
-
-
-# class Store
-
-#   attr_reader :brand, :model, :price
-#   attr_writer :price
-
-#   def initialize (brand, model, price)
-#     @brand = brand
-#     @model = model
-#     @price = price
-#   end
-
-
-# end
-
-# chocolate = Store.new("hersheys", "white", 4.99)
-# candy = Store.new("jollly ranchers", "Awesome twosome", 3.99)
-# chips = Store.new("lays", "bbq", 1.99)
-
-# p chocolate.brand
-# p chocolate.model
-# chocolate.price = 2.99
-# p chocolate.price
-
-# p chocolate.price
-
-class Store
-
-  attr_reader :brand, :model, :price
-  attr_writer :price
-
-  def initialize (input_hash)
-    @brand = input_hash[:brand]
-    @model = input_hash[:model]
-    @price = input_hash[:price]
+class Employee
+  attr_reader :first_name, :last_name, :salary
+  attr_accessor :active
+  def initialize(input_hash)
+    @first_name = input_hash[:first_name]
+    @last_name = input_hash[:last_name]
+    @salary = input_hash[:salary]
+    @active = input_hash[:active]
   end
-
-
+  def print_info
+    puts "#{@first_name} #{@last_name} makes $#{@salary} a year."
+  end
+  def give_annual_raise
+    @salary = @salary * 1.05
+  end
 end
+Add Comment Collapse
 
-chocolate = Store.new({brand: "hersheys", model: "white", price: 4.99})
-candy = Store.new({brand: "jollly ranchers", model: "Awesome twosome", price: 3.99})
-chips = Store.new(brand: "lays", model: "bbq", price: 1.99)
 
-p chocolate.brand
-p chocolate.model
-p chocolate.price
-chocolate.price = 2.99
-p chocolate.price
-
-p chocolate.price
