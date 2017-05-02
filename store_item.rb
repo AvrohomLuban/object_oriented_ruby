@@ -45,28 +45,53 @@
 # p chocolate.price
 
 
+# class Store
+
+#   attr_reader :brand, :model, :price
+#   attr_writer :price
+
+#   def initialize (brand, model, price)
+#     @brand = brand
+#     @model = model
+#     @price = price
+#   end
+
+
+# end
+
+# chocolate = Store.new("hersheys", "white", 4.99)
+# candy = Store.new("jollly ranchers", "Awesome twosome", 3.99)
+# chips = Store.new("lays", "bbq", 1.99)
+
+# p chocolate.brand
+# p chocolate.model
+# chocolate.price = 2.99
+# p chocolate.price
+
+# p chocolate.price
+
 class Store
 
   attr_reader :brand, :model, :price
   attr_writer :price
 
-  def initialize (brand, model, price)
-    @brand = brand
-    @model = model
-    @price = price
+  def initialize (input_hash)
+    @brand = input_hash[:brand]
+    @model = input_hash[:model]
+    @price = input_hash[:price]
   end
 
 
 end
 
-chocolate = Store.new("hersheys", "white", 4.99)
-candy = Store.new("jollly ranchers", "Awesome twosome", 3.99)
-chips = Store.new("lays", "bbq", 1.99)
+chocolate = Store.new({brand: "hersheys", model: "white", price: 4.99})
+candy = Store.new({brand: "jollly ranchers", model: "Awesome twosome", price: 3.99})
+chips = Store.new(brand: "lays", model: "bbq", price: 1.99)
 
 p chocolate.brand
 p chocolate.model
+p chocolate.price
 chocolate.price = 2.99
 p chocolate.price
 
 p chocolate.price
-
