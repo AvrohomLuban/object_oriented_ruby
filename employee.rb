@@ -25,7 +25,7 @@ end
 
 emplyee1 = Employee.new(first_name: "majora", last_name: "carter", salary: 10000, active: true)
 emplyee2 = Employee.new(first_name: "danilo", last_name: "campos", salary: 10000, active: true)
-emplyee3 = Employee.new()
+emplyee3 = Employee.new(first_name: )
 
 p emplyee1.full_name
 p emplyee2.full_name
