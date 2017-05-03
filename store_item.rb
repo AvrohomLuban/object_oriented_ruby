@@ -1,4 +1,14 @@
+module Yummy
+
+  def taste
+    @taste = "yummy"
+  end
+
+end
+
 class Gummy
+
+include Yummy
 
  attr_reader :color, :price, :flavour, :size
  #attr_writer :price
@@ -15,9 +25,11 @@ class Gummy
    @price = new_price
  end
 end
-gummy = Gummy.new({color: "Red", price: 3.99, flavour: "cherry", size: "small"})
+
 
 class Food < Gummy
+
+  include Yummy
 
   attr_reader :shelf_life
 
@@ -32,6 +44,8 @@ food = Food.new({color: "Red", price: 3.99, flavour: "cherry", size: "large", sh
 gummy = Gummy.new(color: "purple", price: 1, flavour: "grape", size: "s")
 p food
 p food.shelf_life
+p food.taste
+
 
 
 
